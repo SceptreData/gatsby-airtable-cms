@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-post-js",
+    "path": "/lets-get-jambalaya",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Gatsby Starter Blog"}},"markdownRemark":{"id":"a26c1741-f664-54ae-97fa-6b9905cee186","excerpt":"What is jambalaya anyways words words words","html":"<h1>What is jambalaya anyways</h1>\n<p>words words words</p>","frontmatter":{"title":"Lets get jambalaya","date":"September 16, 2021","description":"a feast for the senses"}},"previous":null,"next":{"fields":{"slug":"post-two"},"frontmatter":{"title":"Post TWO"}}},"pageContext":{"id":"a26c1741-f664-54ae-97fa-6b9905cee186","previousPostId":null,"nextPostId":"1d0fd620-966a-521c-a3f6-55b8e883c538"}},
+    "staticQueryHashes": ["2841359383","3257411868"]}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-post-js",
+    "path": "/post-two",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Gatsby Starter Blog"}},"markdownRemark":{"id":"1d0fd620-966a-521c-a3f6-55b8e883c538","excerpt":"POST TWO BOOGALOO This is my first post\nBlah Blah Blah Welcome to: the show words words words the jungle","html":"<h1>POST TWO BOOGALOO</h1>\n<p>This is my first post\nBlah Blah Blah</p>\n<h2>Welcome to:</h2>\n<h3>the show</h3>\n<p>words words words</p>\n<h3>the jungle</h3>","frontmatter":{"title":"Post TWO","date":"September 17, 2021","description":"Post numero Dos"}},"previous":{"fields":{"slug":"lets-get-jambalaya"},"frontmatter":{"title":"Lets get jambalaya"}},"next":{"fields":{"slug":"post-one"},"frontmatter":{"title":"Post One"}}},"pageContext":{"id":"1d0fd620-966a-521c-a3f6-55b8e883c538","previousPostId":"a26c1741-f664-54ae-97fa-6b9905cee186","nextPostId":"2c38b067-838b-5e93-a0d5-db26ac48e8ba"}},
+    "staticQueryHashes": ["2841359383","3257411868"]}

@@ -1,5 +1,11 @@
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+// import path from 'path'
+// import { createFilePath } from 'gatsby-source-filesystem'
+// import slugify from 'slugify'
+const path = require('path')
+const { createFilePath } = require('gatsby-source-filesystem')
+const slugify = require('slugify')
+
+Object.fromEntries = arr => Object.assign({}, ...Array.from(arr, ([k, v]) => ({ [k]: v })));
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
@@ -12,7 +18,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `
       {
         allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: ASC }
           limit: 1000
         ) {
           nodes {
@@ -36,15 +41,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const posts = result.data.allMarkdownRemark.nodes
 
-  // Create blog posts pages
-  // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
-  // `context` is available in the template as a prop and as a variable in GraphQL
-
+  // Create blog posts pages if we've found any markdown nodes!
+  // In this instance markdown nodes come from airtable.)
   if (posts.length > 0) {
     posts.forEach((post, index) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id
       const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
 
+      console.log(posts)
+
+      if (post?.fields?.slug) {
       createPage({
         path: post.fields.slug,
         component: blogPost,
@@ -54,6 +60,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           nextPostId,
         },
       })
+      }
     })
   }
 }
@@ -62,14 +69,29 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    const parentNode = getNode(getNode(node.parent).parent).data
+    const { title, date_posted, description } = convertObjectKeysToLowerCase(parentNode)
+
+    // Attach our primitive field values to the frontmatter
+    node.frontmatter.title = title
+    node.frontmatter.date = date_posted
+    node.frontmatter.description = description
+
+    // Generate a url friendly slug
+    const slug = slugify(title.toLowerCase())
 
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value: slug,
     })
   }
+}
+
+function convertObjectKeysToLowerCase(obj) {
+  return Object.fromEntries(
+    Object.entries(obj).map(([k, v]) => [k.toLowerCase(), v])
+  )
 }
 
 exports.createSchemaCustomization = ({ actions }) => {

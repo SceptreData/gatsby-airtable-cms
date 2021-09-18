@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-pages-index-js",
+    "path": "/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Gatsby Starter Blog"}},"allMarkdownRemark":{"nodes":[{"excerpt":"POST TWO BOOGALOO This is my first post\nBlah Blah Blah Welcome to: the show words words words the jungle","fields":{"slug":"post-two"},"frontmatter":{"date":"September 17, 2021","title":"Post TWO","description":"Post numero Dos"}},{"excerpt":"This is it! The first post! This is my first post\nBlah Blah Blah","fields":{"slug":"post-one"},"frontmatter":{"date":"September 17, 2021","title":"Post One","description":"The first Post"}},{"excerpt":"What is jambalaya anyways words words words","fields":{"slug":"lets-get-jambalaya"},"frontmatter":{"date":"September 16, 2021","title":"Lets get jambalaya","description":"a feast for the senses"}}]}},"pageContext":{}},
+    "staticQueryHashes": ["2841359383","3257411868"]}
