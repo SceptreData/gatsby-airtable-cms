@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-blog-post-js",
-    "path": "/post-one",
-    "result": {"data":{"site":{"siteMetadata":{"title":"Gatsby Starter Blog"}},"markdownRemark":{"id":"2c38b067-838b-5e93-a0d5-db26ac48e8ba","excerpt":"This is it! The first post! This is my first post\nBlah Blah Blah","html":"<h1>This is it! The first post!</h1>\n<p>This is my first post\nBlah Blah Blah</p>","frontmatter":{"title":"Post One","date":"September 17, 2021","description":"The first Post"}},"previous":{"fields":{"slug":"post-two"},"frontmatter":{"title":"Post TWO"}},"next":null},"pageContext":{"id":"2c38b067-838b-5e93-a0d5-db26ac48e8ba","previousPostId":"1d0fd620-966a-521c-a3f6-55b8e883c538","nextPostId":null}},
-    "staticQueryHashes": ["2841359383","3257411868"]}
